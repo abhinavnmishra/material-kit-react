@@ -25,9 +25,11 @@ import CssBaseline from "@mui/material/CssBaseline";
 // Material Kit 2 React themes
 import theme from "assets/theme";
 import Presentation from "layouts/pages/presentation";
+import DsraEvent from "genesis/layouts/pages/dsraEvent";
 
 // Material Kit 2 React routes
 import routes from "routes";
+import genesisRoutes from "./genesis-routes";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -56,7 +58,9 @@ export default function App() {
       <CssBaseline />
       <Routes>
         {getRoutes(routes)}
+        {getRoutes(genesisRoutes)}
         <Route path="/presentation" element={<Presentation />} />
+        <Route path="/dussehra" element={<DsraEvent />} />
         <Route path="*" element={<Navigate to="/presentation" />} />
       </Routes>
     </ThemeProvider>
